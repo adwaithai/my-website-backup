@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-charcoal font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(11, 61, 62, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 61, 62, 0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-dots-pattern {
+    background-image: radial-gradient(circle, rgba(20, 125, 120, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-teal-deep px-6 py-3 text-sm font-semibold text-white shadow-card transition-all duration-200 hover:bg-teal-med hover:shadow-card-hover active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-teal-deep/20 bg-transparent px-6 py-3 text-sm font-semibold text-teal-deep transition-all duration-200 hover:border-teal-med/40 hover:bg-mint active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-teal-aqua px-6 py-3 text-sm font-semibold text-white shadow-card transition-all duration-200 hover:bg-teal-med hover:shadow-card-hover active:scale-[0.98] disabled:opacity-50;
+  }
+  .card {
+    @apply rounded-card border border-teal-deep/10 bg-white shadow-card transition-all duration-200;
+  }
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:shadow-card-hover;
+  }
+  .nav-link {
+    @apply relative text-sm font-medium text-muted transition-colors duration-200 hover:text-charcoal;
+  }
+  .nav-link-active {
+    @apply text-teal-deep;
+  }
+}
